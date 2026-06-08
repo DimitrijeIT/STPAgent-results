@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "STPAgent companion artifacts: ParkingPilot evaluation dataset, prompts, and analysis scripts"
+message: "If you use this dataset, please cite the paper below."
+type: dataset
+authors:
+  - family-names: Stojanović
+    given-names: Dimitrije
+    affiliation: "University of Novi Sad, Faculty of Technical Sciences"
+  - family-names: Pavković
+    given-names: Bogdan
+    affiliation: "University of Novi Sad, Faculty of Technical Sciences"
+  - family-names: Četić
+    given-names: Nenad
+    affiliation: "University of Novi Sad, Faculty of Technical Sciences"
+preferred-citation:
+  type: article
+  title: "STPAgent: A Writer-Reviewer Multi-Agent Architecture for AI-Assisted Unsafe Control Action Identification"
+  authors:
+    - family-names: Stojanović
+      given-names: Dimitrije
+    - family-names: Pavković
+      given-names: Bogdan
+    - family-names: Četić
+      given-names: Nenad
+  journal: "Journal of Systems Architecture"
+  year: 2026
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+repository-code: "https://github.com/dimitrije-stojanovic/stpagent"
+keywords:
+  - STPA
+  - safety analysis
+  - large language models
+  - multi-agent systems
+  - automotive
+  - ISO 26262

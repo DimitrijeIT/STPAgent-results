@@ -1,0 +1,34 @@
+[
+  {
+    "description": "Loss of life or injury to people",
+    "id": "L1"
+  },
+  {
+    "description": "Loss of or damage to the vehicle",
+    "id": "L2"
+  },
+  {
+    "description": "Loss of or damage to objects outside the vehicle",
+    "id": "L3"
+  },
+  {
+    "description": "Loss of customer sattisfaction",
+    "id": "L4"
+  },
+  {
+    "description": "Loss of parking mission",
+    "id": "L5"
+  },
+  {
+    "description": "Loss of traffic efficiency",
+    "id": "L6"
+  },
+  {
+    "description": "Loss of reputation",
+    "id": "L7"
+  },
+  {
+    "description": "Loss of data (security breaches, unauthorized access)",
+    "id": "L8"
+  }
+]

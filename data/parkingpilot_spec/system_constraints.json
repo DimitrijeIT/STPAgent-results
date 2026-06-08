@@ -1,0 +1,191 @@
+[
+  {
+    "associatedHazards": [
+      "H1"
+    ],
+    "description": "Vehicle must remain farther than minimal distance from other objects",
+    "id": "SC1"
+  },
+  {
+    "associatedHazards": [
+      "H9"
+    ],
+    "description": "ParkingPilot must activate only on user request",
+    "id": "SC2"
+  },
+  {
+    "associatedHazards": [
+      "H2"
+    ],
+    "description": "ParkingPilot must allow activation only in OOD",
+    "id": "SC3"
+  },
+  {
+    "associatedHazards": [
+      "H6",
+      "H5"
+    ],
+    "description": "Vehicle must park inside the boundaries offered to user",
+    "id": "SC4"
+  },
+  {
+    "associatedHazards": [
+      "H7"
+    ],
+    "description": "Vehicle acceleration/deceleration must not reach levels poentially harmful to people",
+    "id": "SC5"
+  },
+  {
+    "associatedHazards": [
+      "H3",
+      "H4",
+      "H10"
+    ],
+    "description": "ParkingPilot must offer all valid parking spaces within 5m radius of the vehicle",
+    "id": "SC6"
+  },
+  {
+    "associatedHazards": [
+      "H4",
+      "H5",
+      "H6"
+    ],
+    "description": "ParkingPilot must consider as valid only parking spaces larger than the vehicle by a set margin",
+    "id": "SC7"
+  },
+  {
+    "associatedHazards": [
+      "H4",
+      "H5",
+      "H6",
+      "H12",
+      "H14"
+    ],
+    "description": "ParkingPilot must consider as valid only parking spaces with no obstacle or curb between it and the vehicle",
+    "id": "SC8"
+  },
+  {
+    "associatedHazards": [
+      "H8",
+      "H20"
+    ],
+    "description": "ParkingPilot must execute the parking maneuvre in <=10 moves",
+    "id": "SC9"
+  },
+  {
+    "associatedHazards": [
+      "H1",
+      "H13"
+    ],
+    "description": "If vehicle violates minimum distance to obstacle, ParkingPilot must abort the parking manuevre and stop the vehicle",
+    "id": "SC10"
+  },
+  {
+    "associatedHazards": [
+      "H2",
+      "H9",
+      "H10",
+      "H19"
+    ],
+    "description": "Driver must have the ability to abort the parking manuevre at any time",
+    "id": "SC11"
+  },
+  {
+    "associatedHazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H10",
+      "H12",
+      "H14"
+    ],
+    "description": "Vehicle must maintain safe distance to objects",
+    "id": "SC12"
+  },
+  {
+    "associatedHazards": [
+      "H1",
+      "H12",
+      "H14"
+    ],
+    "description": "If the vehicle violates the minimum safe distance, the violation must be detected, and measures must be taken to prevent collision.",
+    "id": "SC13"
+  },
+  {
+    "associatedHazards": [
+      "H7",
+      "H15"
+    ],
+    "description": "The vehicle velocity must not exceed of 30 km/h.",
+    "id": "SC14"
+  },
+  {
+    "associatedHazards": [
+      "H7",
+      "H15"
+    ],
+    "description": "If the vehicle velocity exceeds 30 km/h, the violation must be detected, and the vehicle must slow down to a velocity below 30 km/h.",
+    "id": "SC15"
+  },
+  {
+    "associatedHazards": [
+      "H7",
+      "H17"
+    ],
+    "description": "The vehicle velocity in a turn must not exceed of 20 km/h.",
+    "id": "SC16"
+  },
+  {
+    "associatedHazards": [
+      "H7",
+      "H17"
+    ],
+    "description": "If the vehicle velocity in a turn exceeds 20 km/h, the violation must be detected, and the vehicle must slow down to a velocity below 20 km/h.",
+    "id": "SC17"
+  },
+  {
+    "associatedHazards": [
+      "H16",
+      "H19"
+    ],
+    "description": "The vehicle must not impede the operation of emergency services.",
+    "id": "SC18"
+  },
+  {
+    "associatedHazards": [
+      "H16",
+      "H19"
+    ],
+    "description": "If the vehicle impedes the operation of emergency services, this must be detected, andmeasures must be taken to remove any impediment to emergency services.",
+    "id": "SC19"
+  },
+  {
+    "associatedHazards": [
+      "H18"
+    ],
+    "description": "If the vehicle loses connection to the operator, this must be detected and reported, and the vehicle must stop at the nearest stop station.",
+    "id": "SC20"
+  },
+  {
+    "associatedHazards": [
+      "H16",
+      "H19"
+    ],
+    "description": "When an emergency stop is necessary, the vehicle must stop.",
+    "id": "SC21"
+  },
+  {
+    "associatedHazards": [
+      "H11"
+    ],
+    "description": "The vehicle must not move while serving passengers who are not safely seated.",
+    "id": "SC22"
+  },
+  {
+    "associatedHazards": [
+      "H11"
+    ],
+    "description": "If the vehicle attempts to move while serving passengers who are not safely seated, this must be detected and measures must be taken to prevent the vehicle from moving.",
+    "id": "SC23"
+  }
+]

@@ -1,0 +1,5299 @@
+[
+  {
+    "id": "UCA-Human-ActivateParkPilotScreen-not_providing-1",
+    "control_action": "ActivateParkPilotScreen",
+    "type": "not_provided",
+    "description": "Human does not activate the ParkPilot screen when intending to park, leading to the system not assisting in parking.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Driver attempts to park but fails to activate the ParkPilot screen, resulting in manual parking without assistance and potential improper parking or system unavailability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-ActivateParkPilotScreen-providing-1",
+    "control_action": "ActivateParkPilotScreen",
+    "type": "provided",
+    "description": "Human activates the ParkPilot screen outside the Operational Design Domain (ODD), causing the system to attempt parking in unsafe or unsupported conditions.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H10",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Driver activates ParkPilot screen in an environment or situation not supported by the system (e.g., high-speed road, restricted area), leading to system misbehavior or unsafe operation."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-ActivateParkPilotScreen-timing-1",
+    "control_action": "ActivateParkPilotScreen",
+    "type": "too_early_too_late",
+    "description": "Human activates the ParkPilot screen too early before the vehicle is in a suitable position or too late after missing the parking opportunity.",
+    "hazards": [
+      "H3",
+      "H4",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Driver activates ParkPilot screen before the vehicle is near valid parking spaces or after passing the parking spot, causing the system to fail to identify or select the correct parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-ActivateParkPilotScreen-duration-1",
+    "control_action": "ActivateParkPilotScreen",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human keeps the ParkPilot screen activated for too long without proceeding to select a parking space or canceling, causing system confusion or timeout.",
+    "hazards": [
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Driver activates the ParkPilot screen but delays interaction, causing the system to remain in an active but idle state, potentially leading to system unavailability or excessive parking time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-not_providing-1",
+    "control_action": "Cancel",
+    "type": "not_provided",
+    "description": "Human does not provide the Cancel control action when the vehicle violates minimum distance to objects, leading to continued unsafe proximity.",
+    "hazards": [
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the vehicle approaches an obstacle closer than the minimum safe distance, but the human fails to cancel the parking process to stop the vehicle."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-not_providing-2",
+    "control_action": "Cancel",
+    "type": "not_provided",
+    "description": "Human continuously provides the Cancel control action even when not required, preventing normal system operation.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The autonomous parking system activates in an environment or condition outside its safe operational limits, and the human does not cancel the operation promptly."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-not_providing-3",
+    "control_action": "Cancel",
+    "type": "not_provided",
+    "description": "Human does not provide the Cancel control action when the vehicle is parking in the wrong space or improperly within the desired parking space.",
+    "hazards": [
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle begins or continues parking in an incorrect or undesired parking space, and the human fails to cancel the parking maneuver to correct the error."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-not_providing-4",
+    "control_action": "Cancel",
+    "type": "not_provided",
+    "description": "Human does not provide the Cancel control action when the vehicle exhibits too severe acceleration or deceleration during parking.",
+    "hazards": [
+      "H7"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking process, the vehicle accelerates or decelerates beyond safe limits, but the human does not intervene by canceling the maneuver."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-not_providing-5",
+    "control_action": "Cancel",
+    "type": "not_provided",
+    "description": "Human does not provide the Cancel control action when the vehicle is stopped in a location where passengers cannot safely exit.",
+    "hazards": [
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle completes parking but stops in a location that blocks passenger egress, and the human fails to cancel or adjust the maneuver."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-providing-1",
+    "control_action": "Cancel",
+    "type": "provided",
+    "description": "Human provides the Cancel control action unnecessarily during a valid parking maneuver, causing premature termination.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The parking process is proceeding correctly within operational limits, but the human cancels the maneuver, causing incomplete parking or system unavailability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-providing-2",
+    "control_action": "Cancel",
+    "type": "provided",
+    "description": "Human provides the Cancel control action while the vehicle is moving and serving passengers who are not safely seated, leading to unsafe vehicle behavior.",
+    "hazards": [
+      "H11",
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During passenger boarding or alighting, the human cancels the parking process abruptly, potentially causing unexpected vehicle movement."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-providing-3",
+    "control_action": "Cancel",
+    "type": "provided",
+    "description": "Human provides the Cancel control action during system activation outside the ODD, but the cancel command is ignored or delayed, causing unsafe operation.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system activates outside its safe domain, the human attempts to cancel, but the system fails to respond promptly."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-timing-1",
+    "control_action": "Cancel",
+    "type": "too_early_too_late",
+    "description": "Human provides the Cancel control action too late after the vehicle violates minimum safe distance, failing to prevent collision.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle approaches an obstacle dangerously close, but the human delays canceling the parking maneuver until after a hazard has occurred."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-timing-2",
+    "control_action": "Cancel",
+    "type": "too_early_too_late",
+    "description": "Human provides the Cancel control action too early during a valid parking maneuver, causing unnecessary interruption and incomplete parking.",
+    "hazards": [
+      "H8",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The parking process is ongoing and safe, but the human cancels prematurely, causing the vehicle to stop outside the desired parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-timing-3",
+    "control_action": "Cancel",
+    "type": "too_early_too_late",
+    "description": "Human provides the Cancel control action out of sequence, e.g., canceling before selecting a parking space, causing system confusion or errors.",
+    "hazards": [
+      "H10",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The human cancels the parking process before the system has identified or confirmed a parking space, leading to inconsistent system states."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-duration-1",
+    "control_action": "Cancel",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human holds the Cancel control action input too briefly, causing the system to ignore the cancel command and continue unsafe parking.",
+    "hazards": [
+      "H1",
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The human attempts to cancel the parking maneuver by briefly pressing the cancel button or brake, but the system does not register the input."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-Cancel-duration-2",
+    "control_action": "Cancel",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human holds the Cancel control action input too long, causing unintended system reset or loss of system state.",
+    "hazards": [
+      "H10",
+      "H20",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The human presses and holds the cancel control excessively, causing the system to reset or lose current parking data, leading to incorrect parking behavior."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-not_providing-1",
+    "control_action": "SelectParkingSpace",
+    "type": "not_provided",
+    "description": "Human does not select any parking space when prompted, causing the system to be unable to proceed with parking.",
+    "hazards": [
+      "H3",
+      "H20",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver fails to select a parking space within the allowed time or ignores the prompt, leading to inability to identify a parking space and the autonomous parking system becoming unavailable or timing out."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-not_providing-2",
+    "control_action": "SelectParkingSpace",
+    "type": "not_provided",
+    "description": "Human does not select a parking space despite the vehicle being in an operational design domain (ODD), leading to system activation outside ODD or involuntary activation.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The driver does not select a parking space but the system activates or attempts to activate parking functions regardless, causing hazards related to activation outside ODD or involuntary activation."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-providing-1",
+    "control_action": "SelectParkingSpace",
+    "type": "provided",
+    "description": "Human selects a parking space that is too small or obstructed, causing the vehicle to attempt parking in an invalid space.",
+    "hazards": [
+      "H4",
+      "H5",
+      "H6",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver selects a parking space that does not meet size or obstacle-free constraints, leading to wrong space identification and improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-providing-2",
+    "control_action": "SelectParkingSpace",
+    "type": "provided",
+    "description": "Human selects a parking space while the system is outside the operational design domain (ODD), causing system activation outside allowed conditions.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver selects a parking space when environmental or system conditions do not allow safe parking, leading to hazards from system activation outside ODD or involuntary activation."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-timing-1",
+    "control_action": "SelectParkingSpace",
+    "type": "too_early_too_late",
+    "description": "Human selects a parking space too early before the vehicle is in a suitable position or before the system is ready to start parking.",
+    "hazards": [
+      "H4",
+      "H5",
+      "H6",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver selects a parking space prematurely, causing the system to misinterpret the environment or state, leading to wrong space identification or incorrect system state communication."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-timing-2",
+    "control_action": "SelectParkingSpace",
+    "type": "too_early_too_late",
+    "description": "Human selects a parking space too late after the system has started searching or after the parking maneuver has begun.",
+    "hazards": [
+      "H3",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver delays selection until after the system has started parking, causing inability to identify parking space properly or exceeding allowed parking time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-timing-3",
+    "control_action": "SelectParkingSpace",
+    "type": "too_early_too_late",
+    "description": "Human selects parking spaces out of sequence, e.g., switching between spaces repeatedly during the parking process.",
+    "hazards": [
+      "H8",
+      "H10",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver changes the selected parking space multiple times during the parking maneuver, causing confusion in system state and potentially improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-duration-1",
+    "control_action": "SelectParkingSpace",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human holds the selection input too briefly, causing the system to not register the parking space selection.",
+    "hazards": [
+      "H3",
+      "H20",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver taps or presses the selection control too quickly or inconsistently, leading to failure in recognizing the selected parking space and inability to proceed."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-SelectParkingSpace-duration-2",
+    "control_action": "SelectParkingSpace",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human holds the selection input too long, causing the system to misinterpret the command or trigger unintended actions.",
+    "hazards": [
+      "H4",
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver presses and holds the selection button or control excessively, causing the system to misinterpret the input as multiple selections or activation commands, leading to wrong space identification or involuntary activation."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-EmergencyCancelByBrake-not_providing-1",
+    "control_action": "EmergencyCancelByBrake",
+    "type": "not_provided",
+    "description": "Human does not perform emergency cancel by brake when an immediate stop is required during parking, leading to continued autonomous parking maneuvers.",
+    "hazards": [
+      "H1",
+      "H19",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During an emergency situation where the vehicle violates minimum distance to objects or an emergency stop is necessary, the human fails to press the brake to cancel the parking maneuver."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-EmergencyCancelByBrake-providing-1",
+    "control_action": "EmergencyCancelByBrake",
+    "type": "provided",
+    "description": "Human performs emergency cancel by brake unnecessarily when the parking maneuver is proceeding safely, causing abrupt stop of the parking process.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Human presses the brake pedal to cancel parking even though the system is operating correctly and within operational design domain (ODD), interrupting the parking process prematurely."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-EmergencyCancelByBrake-timing-1",
+    "control_action": "EmergencyCancelByBrake",
+    "type": "too_early_too_late",
+    "description": "Human performs emergency cancel by brake too late after a hazard has already occurred, failing to prevent collision or unsafe conditions.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Human delays pressing the brake pedal after the vehicle has already violated minimum safe distance or an emergency stop was necessary, reducing effectiveness of the emergency cancel."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-EmergencyCancelByBrake-duration-1",
+    "control_action": "EmergencyCancelByBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human holds the brake pedal pressed too long, causing the parking process to remain canceled and preventing resumption of parking.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Human continuously presses the brake pedal beyond the necessary time to cancel, causing the system to remain inactive and the vehicle not to complete parking within allowed moves."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-not_providing-1",
+    "control_action": "PressBrake",
+    "type": "not_provided",
+    "description": "Human does not press the brake pedal when the vehicle is approaching an obstacle too closely, leading to failure to stop and violation of minimum safe distance.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking or maneuvering, the driver fails to apply the brake pedal when the vehicle is too close to an object or curb, causing potential collision or unsafe stopping location."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-not_providing-2",
+    "control_action": "PressBrake",
+    "type": "not_provided",
+    "description": "Human does not press the brake pedal to abort the parking maneuver during an emergency or system malfunction, preventing the vehicle from stopping as required.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H19",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver fails to intervene by pressing the brake pedal to cancel the ParkPilot system when it activates outside the operational design domain or when an emergency stop is necessary."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-not_providing-3",
+    "control_action": "PressBrake",
+    "type": "not_provided",
+    "description": "Human does not press the brake pedal when the vehicle is moving while passengers are not safely seated, allowing unsafe vehicle movement.",
+    "hazards": [
+      "H11",
+      "L1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During passenger boarding or alighting, the driver fails to press the brake pedal to prevent vehicle movement while passengers are not safely seated."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-providing-1",
+    "control_action": "PressBrake",
+    "type": "provided",
+    "description": "Human presses the brake pedal unnecessarily or excessively, causing abrupt deceleration that exceeds safe limits.",
+    "hazards": [
+      "H7",
+      "H15",
+      "L1",
+      "L3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver applies the brake pedal too hard or when not required, causing harsh deceleration that may harm passengers or damage the vehicle and surroundings."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-providing-2",
+    "control_action": "PressBrake",
+    "type": "provided",
+    "description": "Human presses the brake pedal while the vehicle is outside the operational design domain (ODD), causing unintended system activation or emergency stop.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver presses the brake pedal in conditions where the ParkPilot system should not be active, leading to system confusion or involuntary activation."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-providing-3",
+    "control_action": "PressBrake",
+    "type": "provided",
+    "description": "Human presses the brake pedal while the vehicle is moving in a turn at speeds exceeding 20 km/h, causing instability or loss of control.",
+    "hazards": [
+      "H7",
+      "H17",
+      "L1",
+      "L2"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During a turn at excessive speed, the driver presses the brake pedal abruptly, potentially causing skidding or loss of vehicle control."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-timing-1",
+    "control_action": "PressBrake",
+    "type": "too_early_too_late",
+    "description": "Human presses the brake pedal too late when the vehicle is approaching an obstacle, failing to prevent collision or violation of minimum distance.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12",
+      "L1",
+      "L3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver delays pressing the brake pedal during parking or maneuvering, resulting in insufficient stopping distance and potential collision."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-timing-2",
+    "control_action": "PressBrake",
+    "type": "too_early_too_late",
+    "description": "Human presses the brake pedal too early during the parking maneuver, causing unnecessary interruption or failure to complete the parking process correctly.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "L4",
+      "L5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver applies the brake pedal prematurely during automated parking, causing the vehicle to stop before properly positioning within the parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-timing-3",
+    "control_action": "PressBrake",
+    "type": "too_early_too_late",
+    "description": "Human presses the brake pedal out of sequence, such as pressing it when the system expects acceleration or steering input, causing system confusion or unsafe behavior.",
+    "hazards": [
+      "H10",
+      "H19",
+      "L6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking process, the driver presses the brake pedal at an unexpected time, disrupting the control sequence and potentially causing unsafe vehicle states."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-duration-1",
+    "control_action": "PressBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human presses and holds the brake pedal too long, causing the vehicle to remain stopped unnecessarily and exceeding allowed parking time.",
+    "hazards": [
+      "H8",
+      "H5",
+      "L4",
+      "L5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver maintains brake pressure beyond the required stopping time during parking, leading to inefficient parking and potential system timeout."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-duration-2",
+    "control_action": "PressBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human releases the brake pedal too soon during an emergency stop, causing the vehicle to move unexpectedly and fail to stop safely.",
+    "hazards": [
+      "H1",
+      "H12",
+      "H14",
+      "H19",
+      "L1",
+      "L3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During an emergency stop or obstacle avoidance, the driver releases the brake pedal prematurely, allowing the vehicle to move into unsafe areas."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-Human-PressBrake-duration-3",
+    "control_action": "PressBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Human intermittently presses and releases the brake pedal during parking, causing inconsistent braking and unstable vehicle behavior.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "L2",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The driver applies the brake pedal in a start-stop manner during parking, leading to jerky movements and improper parking alignment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Human"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateBrake-not_providing-1",
+    "control_action": "ActivateBrake",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller fails to activate the brake when the vehicle is approaching an obstacle too closely, leading to violation of minimum distance to objects.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when sensor data indicates an obstacle within unsafe proximity but the controller does not send the activate brake command, possibly due to sensor failure or incorrect process model."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateBrake-providing-1",
+    "control_action": "ActivateBrake",
+    "type": "provided",
+    "description": "The ParkPiIot Controller activates the brake unnecessarily when no obstacle or hazard is detected, causing abrupt stops and potential loss of customer satisfaction.",
+    "hazards": [
+      "H7",
+      "H4",
+      "H5",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the controller misinterprets sensor data or misidentifies parking space boundaries, activating brakes without valid reason."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateBrake-timing-1",
+    "control_action": "ActivateBrake",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller activates the brake too late after detecting an obstacle, resulting in insufficient stopping distance and potential collision.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H2",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when delays in processing sensor inputs or communication latency cause late brake activation during parking maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateBrake-duration-1",
+    "control_action": "ActivateBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller keeps the brake activated for too long after the vehicle has stopped, causing unnecessary wear and possible vehicle immobilization.",
+    "hazards": [
+      "H8",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the controller does not release the brake promptly after parking is complete or when the vehicle is stationary."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateBrake-duration-2",
+    "control_action": "ActivateBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops brake activation too soon before the vehicle is fully stopped, causing the vehicle to roll or collide with objects.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the controller prematurely deactivates the brake due to incorrect estimation of vehicle speed or position."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-not_providing-1",
+    "control_action": "DeactivateBrake",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller fails to send the 'Deactivate brake' command when the vehicle needs to move out of the parking space, causing the vehicle to remain stationary and unable to complete the parking maneuver.",
+    "hazards": [
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the parking maneuver is complete or needs to continue, but the brake remains engaged, preventing vehicle movement and causing excessive parking time or system unavailability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-providing-1",
+    "control_action": "DeactivateBrake",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sends the 'Deactivate brake' command while the vehicle is not properly positioned or the parking space is not correctly identified, causing the vehicle to move unexpectedly and potentially collide with obstacles or park incorrectly.",
+    "hazards": [
+      "H1",
+      "H4",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the system deactivates the brake before confirming a valid parking space or safe distance to objects, leading to unsafe vehicle movement."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-timing-1",
+    "control_action": "DeactivateBrake",
+    "type": "too_early_too_late",
+    "description": "The 'Deactivate brake' command is sent too early during the parking maneuver, before the vehicle has fully stopped or before the parking space is verified, causing the vehicle to move prematurely and risk collision or parking errors.",
+    "hazards": [
+      "H1",
+      "H3",
+      "H4",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs if the brake is released before the vehicle is properly aligned or the parking space is confirmed, leading to unsafe movement or wrong parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-timing-2",
+    "control_action": "DeactivateBrake",
+    "type": "too_early_too_late",
+    "description": "The 'Deactivate brake' command is sent too late after the vehicle has stopped and needs to move, causing delays in parking completion and potentially triggering system timeouts or driver intervention.",
+    "hazards": [
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the brake remains engaged longer than necessary, delaying vehicle movement and increasing parking time beyond acceptable limits."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-duration-1",
+    "control_action": "DeactivateBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The 'Deactivate brake' command is applied too briefly, causing the brake to re-engage unexpectedly during vehicle movement, resulting in jerky motions or sudden stops that may confuse passengers or damage the vehicle.",
+    "hazards": [
+      "H7",
+      "H11",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs when the brake is released but immediately reapplied due to a control signal duration issue, causing unstable vehicle behavior during parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateBrake-duration-2",
+    "control_action": "DeactivateBrake",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The 'Deactivate brake' command remains active for too long, causing the vehicle to roll or move uncontrollably beyond the intended parking position, potentially violating safe distances or parking boundaries.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Occurs if the brake is released and not re-engaged timely, allowing the vehicle to move past the desired stopping point or into unsafe areas."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-not_providing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not activated when the vehicle is performing a parking maneuver in a complex or crowded environment, leading to other road users being unaware of the vehicle's status.",
+    "hazards": [
+      "H10",
+      "H16",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking in busy or emergency-sensitive areas, failure to activate hazard lights may cause miscommunication to drivers and pedestrians, increasing risk of collision or impeding emergency services."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-providing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is activated outside of the operational design domain (ODD) or when the vehicle is not engaged in parking, causing confusion to other road users and potentially leading to unsafe situations.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H10",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Hazard lights turn on involuntarily or without user request while driving normally, misleading other drivers and possibly causing traffic inefficiency or emergency service obstruction."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-timing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is activated too late after the parking maneuver starts, delaying warning signals to surrounding traffic and increasing the risk of collision or misinterpretation of vehicle intent.",
+    "hazards": [
+      "H1",
+      "H10",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "When the vehicle begins parking but hazard lights are activated only after significant movement, other road users may not anticipate the vehicle's actions, increasing hazard likelihood."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-timing-2",
+    "control_action": "ActivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is activated too early before the parking maneuver begins, causing unnecessary confusion or distraction to other drivers and pedestrians.",
+    "hazards": [
+      "H10",
+      "H6",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Hazard lights turn on prematurely, for example, while the vehicle is still in normal driving mode, misleading others about the vehicle's intentions."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-duration-1",
+    "control_action": "ActivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light remains activated for too long after the parking maneuver is completed or aborted, causing confusion and miscommunication to other road users.",
+    "hazards": [
+      "H10",
+      "H16",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After parking is finished or canceled, hazard lights stay on unnecessarily, potentially signaling a hazard or emergency when none exists."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-ActivateHazardLight-duration-2",
+    "control_action": "ActivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light is deactivated too soon during an ongoing parking maneuver, reducing visibility and warning to surrounding traffic and increasing collision risk.",
+    "hazards": [
+      "H1",
+      "H10",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Hazard lights turn off before the vehicle has fully stopped or completed parking, causing other road users to underestimate the vehicle's status."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-not_providing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not deactivated after parking maneuver completion, causing confusion about vehicle status.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After the vehicle has completed parking and is stationary, the ParkPiIot Controller fails to send the deactivate hazard light command, leading to incorrect system state communicated to the driver and environment and possible involuntary activation perception."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-not_providing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not deactivated when the parking maneuver is aborted, causing unclear vehicle status and potential driver confusion.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During an emergency cancel or manual override, the ParkPiIot Controller fails to deactivate the hazard light, resulting in the vehicle appearing to be in an emergency or active parking state when it is not."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-providing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is deactivated prematurely during an ongoing parking maneuver, reducing visibility and signaling to other road users.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H16",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "While the vehicle is still performing parking maneuvers, the ParkPiIot Controller sends a deactivate hazard light command, causing other road users and pedestrians to be unaware of the vehicle\u2019s active parking state, increasing risk of collision or obstruction."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-providing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is deactivated while the vehicle is stopped in a location where passengers cannot safely exit, misleading surrounding traffic and passengers.",
+    "hazards": [
+      "H12",
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The ParkPiIot Controller deactivates the hazard light although the vehicle is stopped in a place where passengers cannot safely leave, causing confusion and potential safety risks for passengers and other road users."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-timing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is deactivated too early immediately after initiating parking, before the vehicle is fully stopped or secured.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The ParkPiIot Controller sends the deactivate hazard light command too soon after starting the parking maneuver, before the vehicle has reached a safe and stable parked state, increasing risk of collision or improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-timing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is deactivated too late after parking completion, causing unnecessary confusion or miscommunication to other road users.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After the vehicle has successfully parked and is stationary, the ParkPiIot Controller delays deactivation of the hazard light, leading to incorrect signaling and potential driver or pedestrian misunderstanding."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-duration-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light is deactivated too soon during the parking process, before the vehicle is fully stopped and secured.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The ParkPiIot Controller stops the hazard light signal prematurely during parking, reducing visibility and signaling to other road users that the vehicle is no longer in an active parking state, increasing risk of collision or improper parking."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-DeactivateHazardLight-duration-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light remains deactivated for too long after parking maneuver completion, failing to alert other road users during critical transition phases.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The hazard light is kept off for an extended period after parking completion or abort, causing miscommunication of vehicle status to the driver and environment, potentially leading to unsafe situations."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAcceleration0-not_providing-1",
+    "control_action": "SetAcceleration0",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set acceleration to 0 when the vehicle is supposed to stop during parking, leading to unintended movement.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the final parking maneuver, the controller fails to command zero acceleration, causing the vehicle to continue moving and potentially violate minimum distance to objects or park improperly."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAcceleration0-providing-1",
+    "control_action": "SetAcceleration0",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets acceleration to 0 while the vehicle should still be moving to complete the parking maneuver.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the controller commands zero acceleration prematurely, causing the vehicle to stop before parking is complete, resulting in incomplete parking or extended parking time beyond allowed limits."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAcceleration0-timing-1",
+    "control_action": "SetAcceleration0",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets acceleration to 0 too early or too late during the parking sequence.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If zero acceleration is commanded too early, the vehicle may stop before reaching the parking space; if too late, the vehicle may overshoot or collide with obstacles, violating minimum distance constraints."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAcceleration0-duration-1",
+    "control_action": "SetAcceleration0",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller maintains acceleration at 0 for too short or too long a duration during parking.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If zero acceleration is applied too briefly, the vehicle may creep forward unintentionally; if applied too long, the vehicle may remain stationary excessively, causing delays or blocking traffic."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationNegative-not_providing-1",
+    "control_action": "SetAccelerationNegative",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set negative acceleration (deceleration) when required to slow down or stop during parking maneuvers.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the vehicle approaches an obstacle or the desired parking space boundary, but the controller fails to command deceleration, causing the vehicle to continue moving forward without slowing."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationNegative-providing-1",
+    "control_action": "SetAccelerationNegative",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets negative acceleration when it is not needed, causing unnecessary or excessive deceleration.",
+    "hazards": [
+      "H7",
+      "H8",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle is moving smoothly within the parking space or approaching at a safe speed, but the controller commands deceleration abruptly or unnecessarily, leading to jerky movements or prolonged parking time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationNegative-timing-1",
+    "control_action": "SetAccelerationNegative",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets negative acceleration too early or too late during the parking maneuver.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The controller delays deceleration until the vehicle is too close to an obstacle or applies deceleration too early causing inefficient parking trajectory or abrupt stops."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationNegative-duration-1",
+    "control_action": "SetAccelerationNegative",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller applies negative acceleration for too short or too long a duration during parking.",
+    "hazards": [
+      "H7",
+      "H8",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Deceleration is applied briefly and then stopped prematurely causing the vehicle to overshoot the parking space, or deceleration is applied excessively long causing the vehicle to stop unnecessarily or prolong parking time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-not_providing-1",
+    "control_action": "SetAccelerationPositive",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set positive acceleration when needed to move the vehicle into the parking space, causing the vehicle to stall or fail to complete the parking maneuver.",
+    "hazards": [
+      "H5",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the vehicle requires positive acceleration to move forward into the parking space, but the controller fails to provide it due to sensor failure or incorrect process model, leading to incomplete parking or system unavailability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-providing-1",
+    "control_action": "SetAccelerationPositive",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets positive acceleration when the vehicle is already too close to an object or obstacle, causing the vehicle to violate minimum distance constraints.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H2",
+      "H9",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The controller commands positive acceleration despite detecting an obstacle within the minimum safe distance or outside the operational design domain (ODD), potentially causing collisions or unsafe vehicle movement."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-timing-1",
+    "control_action": "SetAccelerationPositive",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets positive acceleration too early before the parking space is correctly identified or before the vehicle is aligned properly, causing the vehicle to move into an incorrect or unsafe position.",
+    "hazards": [
+      "H3",
+      "H4",
+      "H5",
+      "H6",
+      "H10",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Acceleration is applied before the parking space is confirmed or before steering adjustments are made, leading to wrong space identification or improper parking within the space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-duration-1",
+    "control_action": "SetAccelerationPositive",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller applies positive acceleration for too long, causing the vehicle to overshoot the parking space or exceed safe velocity limits.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H15",
+      "H17",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Acceleration is maintained beyond the required duration during parking, resulting in the vehicle moving past the intended parking boundaries or accelerating to unsafe speeds."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-not_providing-2",
+    "control_action": "SetAccelerationPositive",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller fails to provide positive acceleration when the vehicle needs to exit a parking maneuver or reposition, causing the vehicle to remain stationary in an unsafe or obstructive location.",
+    "hazards": [
+      "H12",
+      "H16",
+      "H19",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After an aborted or completed parking attempt, the vehicle requires positive acceleration to move out of the parking space or emergency stop location, but the controller does not provide it, causing obstruction or emergency service impediment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-providing-2",
+    "control_action": "SetAccelerationPositive",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides positive acceleration while passengers are not safely seated or while the vehicle is outside the defined driving area.",
+    "hazards": [
+      "H11",
+      "H13",
+      "H1",
+      "H14",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Acceleration is commanded despite safety checks indicating passengers are not seated or the vehicle is outside allowed boundaries, risking injury or unsafe operation."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-timing-2",
+    "control_action": "SetAccelerationPositive",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets positive acceleration too late after the driver has requested parking, causing delays that lead to extended parking time or driver confusion.",
+    "hazards": [
+      "H8",
+      "H10",
+      "H4",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Acceleration is delayed due to slow processing or communication lag, causing the parking maneuver to take longer than allowed or incorrect system state displayed to the driver."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetAccelerationPositive-duration-2",
+    "control_action": "SetAccelerationPositive",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops positive acceleration too soon, causing the vehicle to stop short of the parking space or fail to complete the maneuver.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Acceleration is cut off prematurely due to sensor misinterpretation or controller error, resulting in incomplete parking or wrong space occupancy."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-not_providing-1",
+    "control_action": "SetGearForward",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set the gear to Forward when the vehicle is supposed to move forward into the parking space, causing the vehicle to remain stationary and fail to complete the parking maneuver.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the system fails to command the gearbox to set gear Forward when forward movement is required to position the vehicle properly within the parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-not_providing-2",
+    "control_action": "SetGearForward",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set gear Forward when the vehicle needs to leave a parking space or move forward safely, potentially causing the vehicle to block traffic or emergency services.",
+    "hazards": [
+      "H16",
+      "H19",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "When the vehicle needs to exit a parking space or reposition forward, the controller fails to provide the gear Forward command, causing the vehicle to remain immobile and obstruct traffic or emergency operations."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-providing-1",
+    "control_action": "SetGearForward",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets gear Forward when the vehicle is not supposed to move forward, causing it to violate minimum distance to objects or park in the wrong space.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The controller commands gear Forward while the vehicle is too close to obstacles or when the parking space has not been correctly identified, leading to collisions or improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-providing-2",
+    "control_action": "SetGearForward",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets gear Forward while the system is activated outside the Operational Design Domain (ODD), causing unsafe vehicle movement.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The controller issues a Forward gear command when the system is not allowed to operate (e.g., in unsuitable environments or conditions), potentially causing involuntary activation or unsafe driving."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-timing-1",
+    "control_action": "SetGearForward",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets gear Forward too early before the vehicle has properly identified the parking space, leading to collisions or parking in the wrong space.",
+    "hazards": [
+      "H3",
+      "H4",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gear Forward command is issued before the parking space detection process is complete or validated, causing the vehicle to move forward prematurely into unsafe or incorrect areas."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-timing-2",
+    "control_action": "SetGearForward",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets gear Forward too late after the vehicle should have started moving forward, causing delays that result in excessive parking time or failure to complete the maneuver.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Delays in issuing the Forward gear command cause the parking maneuver to take longer than allowed, potentially leading to system unavailability or user dissatisfaction."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-duration-1",
+    "control_action": "SetGearForward",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller keeps gear Forward engaged too long, causing the vehicle to overshoot the parking space or collide with obstacles.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gear Forward command remains active beyond the intended movement, causing the vehicle to move forward excessively and violate safe distances or parking boundaries."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearForward-duration-2",
+    "control_action": "SetGearForward",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops providing gear Forward too soon, causing the vehicle to stop prematurely and fail to park properly within the desired parking space.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gear Forward command is disengaged before the vehicle reaches the correct position in the parking space, resulting in incomplete parking or the need for additional maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-not_providing-1",
+    "control_action": "SetGearNeutral",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set the gear to Neutral when the vehicle is supposed to stop and park, causing the vehicle to remain in gear and potentially move unintentionally.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H11",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the final parking maneuver, the controller fails to command gear Neutral, resulting in the vehicle not being properly immobilized inside the parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-not_providing-2",
+    "control_action": "SetGearNeutral",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not set gear Neutral after an emergency stop command, causing the vehicle to remain in gear and potentially move unexpectedly.",
+    "hazards": [
+      "H1",
+      "H12",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After an emergency stop is triggered, the controller fails to set gear Neutral, increasing risk of unintended vehicle movement and collision."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-providing-1",
+    "control_action": "SetGearNeutral",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets gear Neutral while the vehicle is supposed to be moving forward or reversing during parking, causing loss of vehicle control and unexpected stops.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During active parking maneuvers, the controller erroneously commands gear Neutral, causing the vehicle to lose propulsion and potentially collide with obstacles or park incorrectly."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-providing-2",
+    "control_action": "SetGearNeutral",
+    "type": "provided",
+    "description": "The ParkPiIot Controller sets gear Neutral while the system is not activated or outside the operational design domain (ODD), leading to vehicle behavior inconsistent with driver expectations.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The controller commands gear Neutral without user request or outside allowed conditions, causing confusion or unintended vehicle states."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-timing-1",
+    "control_action": "SetGearNeutral",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets gear Neutral too early during the parking maneuver, before the vehicle has fully stopped, causing abrupt loss of drive and potential collision.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Gear Neutral is commanded before the vehicle reaches a safe stopping position, leading to sudden deceleration and possible impact with obstacles."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-timing-2",
+    "control_action": "SetGearNeutral",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets gear Neutral too late after the vehicle has stopped, causing unnecessary engine load or unintended vehicle creep.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H11"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Delay in setting gear Neutral after stopping causes the vehicle to remain in gear longer than needed, risking unintended movement or improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-timing-3",
+    "control_action": "SetGearNeutral",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller sets gear Neutral out of sequence, e.g., before disengaging the clutch or brake, causing mechanical stress or loss of control.",
+    "hazards": [
+      "H7",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Gear Neutral command is issued before prerequisite actions like brake application or clutch disengagement, leading to unsafe vehicle states."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-duration-1",
+    "control_action": "SetGearNeutral",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops applying the gear Neutral command too soon, causing the gearbox to revert to a drive gear unexpectedly.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H11",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Gear Neutral command is withdrawn prematurely during parking, causing unintended vehicle movement or failure to hold position."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearNeutral-duration-2",
+    "control_action": "SetGearNeutral",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller applies the gear Neutral command for too long, preventing the vehicle from moving when required to reposition during parking.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Gear Neutral remains engaged beyond the intended stop phase, causing delays or failure to complete parking maneuvers within allowed moves."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearReverse-not_providing-1",
+    "control_action": "SetGearReverse",
+    "type": "not_provided",
+    "description": "ParkPilot Controller unexpectedly sets the gear to Reverse during forward parking manoeuvres, causing unintended reverse movement.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the system fails to engage reverse gear when required, preventing proper parking or causing the parking process to abort."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearReverse-providing-1",
+    "control_action": "SetGearReverse",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides the 'Set gear Reverse' command when the vehicle is not in a valid operational design domain (ODD) or when no parking maneuver is requested, causing unintended vehicle movement.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H13",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system activates reverse gear outside of allowed conditions, potentially causing involuntary activation or vehicle movement outside the defined driving area."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearReverse-timing-1",
+    "control_action": "SetGearReverse",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides the 'Set gear Reverse' command too early or too late during the parking maneuver, causing the vehicle to move in reverse before the parking space is correctly identified or after passing the intended spot.",
+    "hazards": [
+      "H3",
+      "H4",
+      "H5",
+      "H6",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gear is set to reverse before the system has confirmed a valid parking space or after the vehicle has moved past the parking space, leading to incorrect parking or collision risks."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearReverse-duration-1",
+    "control_action": "SetGearReverse",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller keeps the 'Set gear Reverse' command active for too long, causing the vehicle to continue reversing beyond the intended parking space boundaries.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H1",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The reverse gear remains engaged longer than necessary, causing the vehicle to overshoot the parking space or collide with obstacles."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetGearReverse-duration-2",
+    "control_action": "SetGearReverse",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops the 'Set gear Reverse' command too soon, causing the vehicle to halt prematurely before reaching the parking space.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The reverse gear is disengaged before the vehicle is properly positioned inside the parking space, resulting in improper parking or extended parking time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-not_providing-1",
+    "control_action": "SetSteeringAngle",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not provide a steering angle command when required during the parking maneuver, causing the vehicle to continue straight and potentially violate minimum distance to objects or fail to park properly.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During active parking, the controller fails to send steering commands due to sensor failure or communication loss, resulting in the vehicle not adjusting its trajectory."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-not_providing-2",
+    "control_action": "SetSteeringAngle",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not provide steering angle commands when the system is activated outside the Operational Design Domain (ODD), preventing corrective steering and causing unsafe vehicle behavior.",
+    "hazards": [
+      "H2",
+      "H13"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The system activates in an environment or condition not supported by the ODD, but steering commands are withheld, leading to uncontrolled vehicle movement."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-not_providing-3",
+    "control_action": "SetSteeringAngle",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller fails to provide steering angle commands when the vehicle is attempting to park in a correctly identified parking space, causing the vehicle to not park properly within the desired space.",
+    "hazards": [
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the final parking maneuver, the controller does not send steering commands due to a software fault, resulting in improper parking alignment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-not_providing-4",
+    "control_action": "SetSteeringAngle",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not provide steering angle commands when the vehicle is moving while passengers are not safely seated, failing to prevent unsafe vehicle movement.",
+    "hazards": [
+      "H11"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The system detects passengers not seated safely but does not withhold steering commands, allowing the vehicle to move."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-providing-1",
+    "control_action": "SetSteeringAngle",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides an incorrect steering angle command that causes the vehicle to violate the minimum distance to objects, risking collision.",
+    "hazards": [
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Due to sensor misinterpretation or faulty process model, the controller commands a steering angle that directs the vehicle too close to obstacles."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-providing-2",
+    "control_action": "SetSteeringAngle",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides steering angle commands when the system is activated outside the ODD, causing unsafe vehicle behavior in unsupported environments.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H13"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system erroneously activates in an unsupported environment and issues steering commands, leading to unsafe maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-providing-3",
+    "control_action": "SetSteeringAngle",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides steering angle commands that cause the vehicle to park in the wrong parking space or improperly within the desired space.",
+    "hazards": [
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Incorrect parking space identification or margin calculation leads to steering commands that direct the vehicle into an invalid or wrong parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-providing-4",
+    "control_action": "SetSteeringAngle",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides steering angle commands while passengers are not safely seated, causing the vehicle to move unsafely.",
+    "hazards": [
+      "H11"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The system fails to detect passenger seating status and issues steering commands, allowing vehicle movement with unsafe passenger conditions."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-timing-1",
+    "control_action": "SetSteeringAngle",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides steering angle commands too early before the parking space is correctly identified, causing the vehicle to move toward an invalid or unknown space.",
+    "hazards": [
+      "H3",
+      "H4",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Due to premature processing, the controller issues steering commands before confirming valid parking space availability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-timing-2",
+    "control_action": "SetSteeringAngle",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides steering angle commands too late during the parking maneuver, causing the vehicle to overshoot or violate minimum distance to objects.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Delays in sensor feedback or processing cause late steering adjustments, resulting in unsafe vehicle positioning."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-timing-3",
+    "control_action": "SetSteeringAngle",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides steering angle commands out of sequence relative to other control actions (e.g., gear shifting), causing unsafe vehicle dynamics or loss of control.",
+    "hazards": [
+      "H7",
+      "H15",
+      "H17"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Steering commands are issued before the vehicle is in the correct gear or speed, leading to excessive acceleration or unsafe turning speeds."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-timing-4",
+    "control_action": "SetSteeringAngle",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides steering angle commands after the driver has requested an emergency cancel, causing continued vehicle movement despite abort request.",
+    "hazards": [
+      "H9",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The system fails to immediately halt steering commands upon emergency cancel input, leading to involuntary vehicle movement."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "incorrect",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-duration-1",
+    "control_action": "SetSteeringAngle",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller applies a steering angle command for too long, causing the vehicle to turn excessively and violate minimum distance to objects or park improperly.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "A control loop fault causes the steering angle to remain fixed beyond the intended duration, resulting in unsafe vehicle positioning."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-duration-2",
+    "control_action": "SetSteeringAngle",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops applying the steering angle command too soon, causing incomplete turns and improper parking within the desired space.",
+    "hazards": [
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Communication interruption or premature termination of steering commands leads to incomplete parking maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-duration-3",
+    "control_action": "SetSteeringAngle",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller maintains steering angle commands while the vehicle is outside the defined driving area, causing the vehicle to leave the permitted zone.",
+    "hazards": [
+      "H13"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system fails to detect boundary limits and continues steering commands beyond allowed area."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SetSteeringAngle-duration-4",
+    "control_action": "SetSteeringAngle",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller maintains steering angle commands while an emergency stop is necessary, preventing the vehicle from stopping safely.",
+    "hazards": [
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During emergency conditions, the controller continues steering commands instead of halting all vehicle movement."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-not_providing-1",
+    "control_action": "SounderOFF",
+    "type": "not_provided",
+    "description": "Sounder OFF control action is not provided when the vehicle is too close to an obstacle, resulting in no audible warning to the driver or environment.",
+    "hazards": [
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking maneuver, the vehicle approaches an obstacle closer than the minimum safe distance, but the sounder remains ON to warn of proximity; failure to send Sounder OFF when safe distance is restored leads to confusion or missed warnings."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-not_providing-2",
+    "control_action": "SounderOFF",
+    "type": "not_provided",
+    "description": "Sounder OFF control action is not provided after parking is completed, causing continuous sounder activation and misleading the driver about the parking status.",
+    "hazards": [
+      "H10",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After successful parking, the sounder should be turned OFF to indicate completion; failure to do so may cause the driver to believe the system is still active or that an error occurred."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-not_providing-3",
+    "control_action": "SounderOFF",
+    "type": "not_provided",
+    "description": "Sounder OFF control action is not provided when the system is deactivated outside the Operational Design Domain (ODD), causing the sounder to continue sounding unnecessarily.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "When the system is deactivated due to leaving ODD or user cancel, the sounder should be turned OFF; failure to do so may confuse the driver or bystanders."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-providing-1",
+    "control_action": "SounderOFF",
+    "type": "provided",
+    "description": "Sounder OFF control action is provided while the vehicle is dangerously close to an obstacle, silencing the warning sound prematurely.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the vehicle approaches an obstacle within unsafe distance, but the sounder is turned OFF, removing critical audible warnings and increasing collision risk."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-providing-2",
+    "control_action": "SounderOFF",
+    "type": "provided",
+    "description": "Sounder OFF control action is provided while the parking maneuver is still active and requires driver or system attention, causing loss of important feedback.",
+    "hazards": [
+      "H10",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During active parking, the sounder is turned OFF prematurely, leading to miscommunication about system state or parking progress."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-providing-3",
+    "control_action": "SounderOFF",
+    "type": "provided",
+    "description": "Sounder OFF control action is provided during system activation outside ODD, causing the system to fail to alert the driver of improper activation.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If the system activates outside allowed conditions, the sounder should warn the driver; turning it OFF removes this alert."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-timing-1",
+    "control_action": "SounderOFF",
+    "type": "too_early_too_late",
+    "description": "Sounder OFF control action is provided too early before the vehicle has safely cleared obstacles, causing premature silence of warnings.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the sounder is turned OFF before the vehicle has reached a safe distance from obstacles, leading to missed warnings."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-timing-2",
+    "control_action": "SounderOFF",
+    "type": "too_early_too_late",
+    "description": "Sounder OFF control action is provided too late after parking is completed, causing unnecessary noise and driver confusion.",
+    "hazards": [
+      "H10",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After parking is finished, the sounder continues to sound longer than necessary, misleading the driver about system status."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-timing-3",
+    "control_action": "SounderOFF",
+    "type": "too_early_too_late",
+    "description": "Sounder OFF control action is provided out of sequence, such as before the sounder ON command during system activation, causing inconsistent or missing warnings.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During system startup or activation, the sounder is turned OFF before being turned ON, resulting in no audible feedback when it is needed."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-duration-1",
+    "control_action": "SounderOFF",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder OFF control action is applied too soon, cutting off the warning sound before the hazard is resolved.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder is turned OFF immediately after a brief obstacle detection, but the vehicle is still in unsafe proximity, removing critical warnings prematurely."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-duration-2",
+    "control_action": "SounderOFF",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder OFF control action is applied for too long, preventing the sounder from activating when needed later during the parking process.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder remains OFF for an extended period during parking, missing subsequent obstacle warnings or system alerts."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderOFF-duration-3",
+    "control_action": "SounderOFF",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder OFF control action is maintained after system shutdown or emergency stop, causing confusion about system state.",
+    "hazards": [
+      "H10",
+      "H19",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After emergency stop or system shutdown, the sounder remains OFF, failing to provide confirmation or alert signals to the driver or environment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-not_providing-1",
+    "control_action": "SounderON",
+    "type": "not_provided",
+    "description": "Sounder ON control action is not provided when the vehicle is approaching an obstacle too closely, leading to no audible warning for the driver or environment.",
+    "hazards": [
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle is parking and violates the minimum safe distance to objects, but the sounder does not activate to alert the driver or nearby pedestrians."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-not_providing-2",
+    "control_action": "SounderON",
+    "type": "not_provided",
+    "description": "Sounder ON control action is not provided during emergency stop situations, resulting in no warning sound to indicate the vehicle is stopping abruptly.",
+    "hazards": [
+      "H19",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "An emergency stop is necessary due to obstacle detection or system fault, but the sounder remains silent, failing to warn nearby people or vehicles."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-not_providing-3",
+    "control_action": "SounderON",
+    "type": "not_provided",
+    "description": "Sounder ON control action is not provided when the vehicle is moving while passengers are not safely seated, missing an alert to prevent unsafe movement.",
+    "hazards": [
+      "H11",
+      "L1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The vehicle attempts to move during passenger boarding or alighting without activating the sounder to warn passengers."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-providing-1",
+    "control_action": "SounderON",
+    "type": "provided",
+    "description": "Sounder ON control action is provided continuously even when the vehicle is stationary and no obstacle is near, causing unnecessary noise and driver distraction.",
+    "hazards": [
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The parking process is complete or inactive, but the sounder remains active, confusing the driver and reducing trust in system alerts."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-providing-2",
+    "control_action": "SounderON",
+    "type": "provided",
+    "description": "Sounder ON control action is provided when the system is activated outside the Operational Design Domain (ODD), causing false alarms and potential driver confusion.",
+    "hazards": [
+      "H2",
+      "H9",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The ParkPilot system is active in an unsupported environment (e.g., high speed or unsuitable terrain), and the sounder activates unnecessarily."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-providing-3",
+    "control_action": "SounderON",
+    "type": "provided",
+    "description": "Sounder ON control action is provided when the vehicle is parked properly and no alert is needed, leading to annoyance and potential disregard of warnings.",
+    "hazards": [
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After successful parking within the correct space, the sounder continues to sound without cause."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-timing-1",
+    "control_action": "SounderON",
+    "type": "too_early_too_late",
+    "description": "Sounder ON control action is provided too late after the vehicle violates minimum distance to objects, delaying warning and increasing collision risk.",
+    "hazards": [
+      "H1",
+      "H14",
+      "L1",
+      "L3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle approaches an obstacle too closely but the sounder activates only after the unsafe proximity is reached."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-timing-2",
+    "control_action": "SounderON",
+    "type": "too_early_too_late",
+    "description": "Sounder ON control action is provided too early before the vehicle is near any obstacle, causing false alarms and driver annoyance.",
+    "hazards": [
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder activates prematurely during parking preparation or while searching for a parking space."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-timing-3",
+    "control_action": "SounderON",
+    "type": "too_early_too_late",
+    "description": "Sounder ON control action is provided out of sequence, for example, activating before the parking maneuver starts or after it has been aborted.",
+    "hazards": [
+      "H9",
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder activates when the system is inactive or after the driver has cancelled the parking process."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-duration-1",
+    "control_action": "SounderON",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder ON control action is stopped too soon during an obstacle approach, failing to provide continuous warning until the hazard is cleared.",
+    "hazards": [
+      "H1",
+      "H14",
+      "L1",
+      "L3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle is still close to an obstacle, but the sounder stops prematurely, reducing situational awareness."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-duration-2",
+    "control_action": "SounderON",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder ON control action is applied for too long after the parking maneuver is complete, causing unnecessary noise and driver distraction.",
+    "hazards": [
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle has parked correctly, but the sounder continues to sound beyond the necessary time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderON-duration-3",
+    "control_action": "SounderON",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Sounder ON control action is applied for too long during system faults or false obstacle detections, leading to driver confusion and possible disregard of warnings.",
+    "hazards": [
+      "H10",
+      "L4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder remains active due to sensor errors or system malfunction even though no real hazard exists."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderFrequency-not_providing-1",
+    "control_action": "SounderFrequency",
+    "type": "not_provided",
+    "description": "The ParkPiIot Controller does not provide any sounder frequency signal when the vehicle is approaching an obstacle during parking.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the sounder frequency is not activated or remains silent despite the vehicle nearing obstacles or parking boundaries, leading to lack of driver or system awareness of proximity risks."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderFrequency-providing-1",
+    "control_action": "SounderFrequency",
+    "type": "provided",
+    "description": "The ParkPiIot Controller provides a continuous high-frequency sounder signal even when the vehicle is at a safe distance from obstacles or properly parked.",
+    "hazards": [
+      "H10",
+      "H4",
+      "H5",
+      "H6",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder frequency is activated unnecessarily or at inappropriate intensity, causing confusion or false alarms to the driver, potentially leading to incorrect system state interpretation or premature abort of parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderFrequency-timing-1",
+    "control_action": "SounderFrequency",
+    "type": "too_early_too_late",
+    "description": "The ParkPiIot Controller provides the sounder frequency too late, only after the vehicle has already violated the minimum safe distance to an object.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder frequency warning is delayed, failing to alert the driver or system in time to prevent collision or improper parking within the designated space boundaries."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderFrequency-duration-1",
+    "control_action": "SounderFrequency",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller stops the sounder frequency signal too soon before the vehicle has safely cleared the obstacle or completed parking.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder frequency warning is prematurely stopped, leading to a false sense of safety and potential continuation of unsafe maneuvers near obstacles or outside parking boundaries."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-ParkPiIotController-SounderFrequency-duration-2",
+    "control_action": "SounderFrequency",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The ParkPiIot Controller provides the sounder frequency signal for an excessively long duration after the parking maneuver is completed.",
+    "hazards": [
+      "H10",
+      "H9",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The sounder continues to emit frequency signals unnecessarily, causing driver distraction, confusion about system state, or annoyance leading to distrust of the system."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "ParkPiIot Controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-not_providing-1",
+    "control_action": "SetWantedBrakePressure",
+    "type": "not_provided",
+    "description": "Brake controller does not set the wanted brake pressure when braking is required during parking maneuver, causing the vehicle to continue moving uncontrollably.",
+    "hazards": [
+      "H1",
+      "H12",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the brake controller fails to apply brake pressure when the vehicle approaches an obstacle or when an emergency stop is necessary, leading to collision or unsafe stopping locations."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-providing-1",
+    "control_action": "SetWantedBrakePressure",
+    "type": "provided",
+    "description": "Brake controller sets brake pressure unnecessarily or excessively, causing abrupt or unintended stops.",
+    "hazards": [
+      "H7",
+      "H9",
+      "H11",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure is applied without user request or when the vehicle is moving safely, causing involuntary activation or harsh deceleration that may endanger passengers or block safe passenger exit."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-timing-1",
+    "control_action": "SetWantedBrakePressure",
+    "type": "too_early_too_late",
+    "description": "Brake controller sets brake pressure too late after detecting an obstacle or emergency condition, delaying vehicle stop.",
+    "hazards": [
+      "H1",
+      "H12",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure is applied with delay during parking or emergency stop scenarios, causing the vehicle to violate minimum safe distances or fail to stop in time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-timing-2",
+    "control_action": "SetWantedBrakePressure",
+    "type": "too_early_too_late",
+    "description": "Brake controller sets brake pressure too early before the vehicle reaches the intended stopping point, causing abrupt or unnecessary deceleration.",
+    "hazards": [
+      "H7",
+      "H11",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure is applied prematurely during parking maneuvers, causing discomfort to passengers or stopping the vehicle in an unsafe or inconvenient location."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-timing-3",
+    "control_action": "SetWantedBrakePressure",
+    "type": "too_early_too_late",
+    "description": "Brake controller sets brake pressure out of sequence relative to other control actions (e.g., before gear is set to neutral), causing unstable vehicle behavior.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure is applied before the vehicle is properly configured for parking, leading to improper parking or unsafe vehicle dynamics."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-duration-1",
+    "control_action": "SetWantedBrakePressure",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Brake controller applies brake pressure for too short a duration, causing the vehicle to roll or move unexpectedly after braking.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H12",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure is released prematurely during parking or stopping, causing the vehicle to move beyond safe boundaries or block passenger egress."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-BrakeController-SetWantedBrakePressure-duration-2",
+    "control_action": "SetWantedBrakePressure",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Brake controller maintains brake pressure for too long after parking is complete, causing unnecessary wear or preventing vehicle movement when requested.",
+    "hazards": [
+      "H8",
+      "H4",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Brake pressure remains applied after parking is finished, potentially causing the vehicle to remain immobilized in the wrong parking space or for longer than allowed."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Brake controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-not_providing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not activated when the vehicle is in a critical parking maneuver or emergency situation, leading to reduced visibility and awareness for surrounding traffic and pedestrians.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H16",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle is performing an autonomous parking maneuver or emergency stop, but the chassis controller fails to activate the hazard lights, causing other road users to be unaware of the vehicle's state."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-providing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is activated unnecessarily when the vehicle is parked properly and no emergency or hazard condition exists, causing confusion to other drivers and pedestrians.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H6",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The chassis controller activates hazard lights without a valid trigger, such as during normal parking or driving conditions, misleading other road users about the vehicle's status."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-timing-1",
+    "control_action": "ActivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is activated too late after the vehicle has started an emergency stop or critical parking maneuver, reducing the time other road users have to react.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H16",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The chassis controller delays activation of hazard lights after detecting an emergency stop condition, causing delayed warning signals to surrounding traffic."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-timing-2",
+    "control_action": "ActivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is activated too early before the vehicle initiates a parking maneuver or emergency stop, causing unnecessary distraction or confusion.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H6",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The chassis controller activates hazard lights prematurely before the vehicle actually starts parking or stopping, leading to misinterpretation of vehicle intentions."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-duration-1",
+    "control_action": "ActivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light remains activated for too long after the parking maneuver or emergency condition has ended, causing confusion and potential miscommunication to other road users.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H6",
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The chassis controller fails to deactivate hazard lights promptly after the vehicle has completed parking or emergency stop, misleading surrounding traffic about the vehicle's status."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-ActivateHazardLight-duration-2",
+    "control_action": "ActivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light is deactivated too soon during an ongoing emergency stop or critical parking maneuver, reducing visibility and awareness for other road users.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H16",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The chassis controller turns off hazard lights before the vehicle has safely completed the emergency stop or parking maneuver, increasing risk of collision or misunderstanding."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-not_providing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not deactivated when the parking maneuver is complete, causing confusion about vehicle status and potentially leading to the vehicle being perceived as still in an emergency or active parking state.",
+    "hazards": [
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After the vehicle has finished parking, the Chasis controller fails to deactivate the hazard light, misleading the driver and surrounding traffic about the vehicle's actual state."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-not_providing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "not_provided",
+    "description": "Hazard light is not deactivated after an emergency cancel or manual override, leading to incorrect system state communication and possible driver confusion.",
+    "hazards": [
+      "H10",
+      "H9",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Driver cancels parking maneuver or emergency stop is triggered, but hazard light remains active due to failure to deactivate it."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-providing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is deactivated prematurely during an ongoing parking maneuver, causing other road users to misinterpret the vehicle status and increasing risk of collision or unsafe interactions.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H10",
+      "H3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During active parking, the Chasis controller deactivates the hazard light before the vehicle is fully parked or stopped safely."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-providing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "provided",
+    "description": "Hazard light is deactivated while the vehicle is outside the Operational Design Domain (ODD), leading to lack of warning signals and increased risk of unsafe operation or emergency situations.",
+    "hazards": [
+      "H2",
+      "H9",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Vehicle operates outside allowed conditions but hazard light is turned off, removing a critical alert for driver and environment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-timing-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is deactivated too early, before the vehicle has fully stopped or completed the parking maneuver, causing miscommunication of vehicle status and potential hazards related to unsafe parking or movement.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H10",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Hazard light turns off immediately after initial parking steps, while vehicle is still moving or not properly positioned."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-timing-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "too_early_too_late",
+    "description": "Hazard light is deactivated too late, remaining on after the vehicle is parked and ready for passenger exit, causing confusion and possibly impeding emergency services or other traffic.",
+    "hazards": [
+      "H8",
+      "H16",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Hazard light stays active long after parking is complete and passengers are ready to exit."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-duration-1",
+    "control_action": "DeactivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light is deactivated too soon during the parking process, before the vehicle has reached a safe stop, increasing risk of collision or unsafe proximity to objects or pedestrians.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H12",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, hazard light turns off while vehicle is still moving or close to obstacles."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ChasisController-DeactivateHazardLight-duration-2",
+    "control_action": "DeactivateHazardLight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Hazard light remains active for too long after parking is completed, causing unnecessary distraction to other road users and possibly impeding emergency services or traffic flow.",
+    "hazards": [
+      "H8",
+      "H16",
+      "H6",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Vehicle is parked and stationary, but hazard light continues to flash unnecessarily."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Chasis controller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateLeft-not_providing-1",
+    "control_action": "RotateLeft",
+    "type": "not_provided",
+    "description": "The Servo Steering controller does not rotate the steering column left when required during a parking maneuver, causing the vehicle to fail to align properly with the parking space.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During the parking process, the system requests a left steering rotation to maneuver into the parking space, but the steering column remains static or does not respond."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateLeft-providing-1",
+    "control_action": "RotateLeft",
+    "type": "provided",
+    "description": "The Servo Steering controller rotates the steering column left when it is not needed or when the vehicle is already aligned, causing the vehicle to deviate from the intended path and potentially collide with obstacles.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6",
+      "H3",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The parking process is inactive or the vehicle is aligned correctly, but the steering column is rotated left unnecessarily, leading to unsafe vehicle positioning."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateLeft-timing-1",
+    "control_action": "RotateLeft",
+    "type": "too_early_too_late",
+    "description": "The Servo Steering controller rotates the steering column left too early before the vehicle has reached the correct position or too late after the vehicle has passed the optimal turning point, causing improper parking alignment or collision.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H1",
+      "H14",
+      "H3"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During the parking maneuver, the timing of the left rotation command is mistimed relative to vehicle position and speed, leading to incorrect trajectory."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateLeft-duration-1",
+    "control_action": "RotateLeft",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Servo Steering controller rotates the steering column left for too short a duration, resulting in insufficient steering angle to properly align the vehicle within the parking space.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During the parking process, the steering rotation command is cut off prematurely, causing the vehicle to stop or continue without proper alignment."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateLeft-duration-2",
+    "control_action": "RotateLeft",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Servo Steering controller rotates the steering column left for too long, causing the vehicle to oversteer, potentially hitting obstacles or parking outside the designated space.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "The steering rotation command continues beyond the required angle during parking, leading to excessive turning."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-not_providing-1",
+    "control_action": "RotateRight",
+    "type": "not_provided",
+    "description": "The Servo Steering controller does not rotate the steering column right when required during the parking maneuver, causing the vehicle to fail to steer away from obstacles or align properly within the parking space.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During a parking maneuver, the system detects the need to steer right to avoid an obstacle or to align the vehicle inside the designated parking space, but the steering command is not issued."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-providing-1",
+    "control_action": "RotateRight",
+    "type": "provided",
+    "description": "The Servo Steering controller rotates the steering column right when it is not required, causing the vehicle to steer incorrectly and potentially collide with objects or park outside the designated space.",
+    "hazards": [
+      "H1",
+      "H4",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system issues a rotate right command despite no obstacle avoidance or parking alignment need, leading to incorrect vehicle trajectory."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-timing-1",
+    "control_action": "RotateRight",
+    "type": "too_early_too_late",
+    "description": "The Servo Steering controller rotates the steering column right too early during the parking maneuver, causing the vehicle to turn prematurely and potentially violate minimum distance to objects or miss the correct parking space.",
+    "hazards": [
+      "H1",
+      "H3",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The rotate right command is issued before the vehicle reaches the appropriate position or speed, resulting in unsafe or incorrect maneuvering."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-timing-2",
+    "control_action": "RotateRight",
+    "type": "too_early_too_late",
+    "description": "The Servo Steering controller rotates the steering column right too late during the parking maneuver, causing delayed turning that results in the vehicle hitting obstacles or failing to park properly.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The rotate right command is delayed beyond the safe window for turning, causing the vehicle to overshoot or collide."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-timing-3",
+    "control_action": "RotateRight",
+    "type": "too_early_too_late",
+    "description": "The Servo Steering controller rotates the steering column right out of sequence, e.g., before gear is set to reverse or before speed is reduced, causing unsafe vehicle behavior.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The rotate right command is issued before prerequisite conditions such as gear selection or speed reduction are met."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-duration-1",
+    "control_action": "RotateRight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Servo Steering controller rotates the steering column right for too short a duration, causing incomplete turning and resulting in the vehicle not aligning properly within the parking space or colliding with obstacles.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The rotate right command is stopped prematurely during the parking maneuver, leading to insufficient steering angle."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-ServoSteering-RotateRight-duration-2",
+    "control_action": "RotateRight",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Servo Steering controller rotates the steering column right for too long, causing the vehicle to oversteer, potentially hitting obstacles or parking outside the designated space.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14",
+      "H7"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The rotate right command continues beyond the required steering angle, causing excessive turning."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Servo Steering contoller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-not_providing-1",
+    "control_action": "DecreaseTorque",
+    "type": "not_provided",
+    "description": "Engine controller does not decrease torque when required during parking maneuver, causing the vehicle to accelerate or maintain speed too high, leading to violation of minimum distance to objects.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H7",
+      "H15"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the vehicle approaches an obstacle or parking space boundary and torque reduction is necessary to decelerate safely, but the engine controller fails to reduce torque."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-providing-1",
+    "control_action": "DecreaseTorque",
+    "type": "provided",
+    "description": "Engine controller decreases torque unnecessarily or excessively, causing the vehicle to decelerate too much or stop abruptly, potentially impeding emergency services or causing unsafe conditions for passengers.",
+    "hazards": [
+      "H16",
+      "H11",
+      "H7"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking or low-speed maneuvers, torque is decreased without cause, leading to abrupt deceleration that may startle passengers or block emergency vehicle access."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-timing-1",
+    "control_action": "DecreaseTorque",
+    "type": "too_early_too_late",
+    "description": "Engine controller decreases torque too late after detecting an obstacle or parking boundary, causing the vehicle to violate minimum safe distance or overshoot the parking space.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The vehicle approaches a parking space or obstacle, but torque reduction is delayed, resulting in unsafe proximity or incorrect parking position."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-timing-2",
+    "control_action": "DecreaseTorque",
+    "type": "too_early_too_late",
+    "description": "Engine controller decreases torque too early before the vehicle reaches the required deceleration point, causing jerky or inefficient parking maneuvers and increasing parking time.",
+    "hazards": [
+      "H8",
+      "H5",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque is reduced prematurely during parking, causing unnecessary slowdowns and longer parking duration or incorrect positioning."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-duration-1",
+    "control_action": "DecreaseTorque",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Engine controller decreases torque for too short a duration, causing insufficient deceleration and potential overshoot of parking space or unsafe distance to obstacles.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque reduction is applied briefly during parking, failing to slow the vehicle adequately before reaching obstacles or parking boundaries."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-DecreaseTorque-duration-2",
+    "control_action": "DecreaseTorque",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Engine controller decreases torque for too long, causing the vehicle to stop unnecessarily or lose momentum, leading to increased parking time or inability to complete parking maneuver.",
+    "hazards": [
+      "H8",
+      "H20",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque is reduced excessively during parking, causing the vehicle to stall or take longer than allowed to complete the parking process."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-not_providing-1",
+    "control_action": "IncreaseTorque",
+    "type": "not_provided",
+    "description": "Engine controller does not increase torque when required during parking maneuver, causing the vehicle to stall or fail to move as intended.",
+    "hazards": [
+      "H5",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking process, the engine controller fails to increase torque when the vehicle needs to move forward or backward to park properly, leading to incomplete parking or system unavailability."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-not_providing-2",
+    "control_action": "IncreaseTorque",
+    "type": "not_provided",
+    "description": "Engine controller increases torque excessively during deceleration phases, causing the vehicle to accelerate when it should slow down.",
+    "hazards": [
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "While maneuvering close to obstacles, the engine controller fails to increase torque to adjust speed, causing the vehicle to violate minimum safe distance constraints."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-not_providing-3",
+    "control_action": "IncreaseTorque",
+    "type": "not_provided",
+    "description": "Engine controller does not increase torque when vehicle needs to accelerate to avoid impeding emergency services.",
+    "hazards": [
+      "H16"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Vehicle is blocking emergency service access and requires torque increase to move out of the way, but torque increase is not provided."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-providing-1",
+    "control_action": "IncreaseTorque",
+    "type": "provided",
+    "description": "Engine controller increases torque when the system is activated outside the Operational Design Domain (ODD), causing unsafe vehicle movement.",
+    "hazards": [
+      "H2",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "ParkingPilot is not authorized to operate in current conditions, but torque is increased causing unintended vehicle movement."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-providing-2",
+    "control_action": "IncreaseTorque",
+    "type": "provided",
+    "description": "Engine controller increases torque excessively, causing too severe acceleration or deceleration.",
+    "hazards": [
+      "H7",
+      "H15",
+      "H17"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking or maneuvering, torque increase leads to acceleration beyond safe limits or excessive speed in turns."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-providing-3",
+    "control_action": "IncreaseTorque",
+    "type": "provided",
+    "description": "Engine controller increases torque causing the vehicle to move while passengers are not safely seated.",
+    "hazards": [
+      "H11",
+      "L1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Vehicle attempts to move during passenger boarding or alighting without ensuring passenger safety."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-providing-4",
+    "control_action": "IncreaseTorque",
+    "type": "provided",
+    "description": "Engine controller increases torque causing the vehicle to exceed 30 km/h velocity limit.",
+    "hazards": [
+      "H15",
+      "H7"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking or maneuvering, torque increase causes vehicle speed to surpass allowed maximum velocity."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-timing-1",
+    "control_action": "IncreaseTorque",
+    "type": "too_early_too_late",
+    "description": "Engine controller increases torque too early before the vehicle is properly aligned or steering angle is set, causing unsafe movement.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque increase occurs before the vehicle is correctly positioned or steering is adjusted, leading to potential collisions or improper parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-timing-2",
+    "control_action": "IncreaseTorque",
+    "type": "too_early_too_late",
+    "description": "Engine controller increases torque too late after the parking maneuver has been aborted due to obstacle detection.",
+    "hazards": [
+      "H1",
+      "H13",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "After the parking process is aborted for safety reasons, torque increase is delayed causing unintended vehicle movement."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-timing-3",
+    "control_action": "IncreaseTorque",
+    "type": "too_early_too_late",
+    "description": "Engine controller increases torque out of sequence, e.g., before gear is set to forward or reverse.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque increase command is issued before the gearbox controller sets the appropriate gear, causing unexpected vehicle behavior."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-duration-1",
+    "control_action": "IncreaseTorque",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Engine controller increases torque for too long, causing the vehicle to overshoot the desired parking space.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque is applied beyond the required duration during parking, leading to the vehicle moving past the intended parking spot."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-duration-2",
+    "control_action": "IncreaseTorque",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Engine controller increases torque for too short a duration, causing incomplete or aborted parking maneuvers.",
+    "hazards": [
+      "H5",
+      "H20",
+      "H8"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Torque increase is stopped prematurely during parking, resulting in failure to complete the maneuver."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-EngineController-IncreaseTorque-duration-3",
+    "control_action": "IncreaseTorque",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Engine controller increases torque for too long causing excessive acceleration leading to loss of control in turns.",
+    "hazards": [
+      "H7",
+      "H17",
+      "L1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During turning maneuvers, prolonged torque increase causes vehicle speed to exceed safe limits, risking loss of control."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Engine controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-not_providing-1",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "not_provided",
+    "description": "Gearbox controller does not apply pressure to set gear forward when commanded during parking maneuver, causing the vehicle to remain stationary or fail to move forward as required.",
+    "hazards": [
+      "H5",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During an autonomous parking maneuver, the gearbox controller fails to apply pressure to engage forward gear, preventing the vehicle from moving forward to complete parking within allowed moves or time."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-providing-1",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "provided",
+    "description": "Gearbox controller applies pressure to set gear forward when it is unsafe or not commanded, causing the vehicle to move forward unexpectedly.",
+    "hazards": [
+      "H9",
+      "H1",
+      "H13",
+      "H11",
+      "H12"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gearbox controller engages forward gear without user request or outside operational design domain (ODD), potentially causing involuntary vehicle movement that violates safe distances, leaves defined driving area, or moves while passengers are not safely seated."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-timing-1",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "too_early_too_late",
+    "description": "Gearbox controller applies pressure to set gear forward too early, before the vehicle has safely completed previous maneuvers or before obstacles are cleared.",
+    "hazards": [
+      "H1",
+      "H7",
+      "H14",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the gearbox controller sets gear forward prematurely, causing the vehicle to accelerate into obstacles or before the parking space is properly identified or cleared."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-timing-2",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "too_early_too_late",
+    "description": "Gearbox controller applies pressure to set gear forward too late, delaying vehicle movement and causing extended parking time or failure to complete parking maneuver.",
+    "hazards": [
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gearbox controller delays engaging forward gear during parking, causing the vehicle to exceed allowed parking time or fail to complete the maneuver within the required number of moves."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-timing-3",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "too_early_too_late",
+    "description": "Gearbox controller applies pressure to set gear forward out of sequence, e.g., before clutch is disengaged or before steering adjustments are made.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H1",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gearbox controller engages forward gear before the vehicle is properly aligned or before other control actions like steering or braking are completed, leading to incorrect parking or collision risks."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-duration-1",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Gearbox controller applies pressure to set gear forward for too short a duration, causing incomplete gear engagement and unexpected vehicle behavior.",
+    "hazards": [
+      "H7",
+      "H1",
+      "H5"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During gear shifting, the pressure to set gear forward is released prematurely, causing the vehicle to jerk or fail to accelerate smoothly, potentially leading to unsafe acceleration or parking errors."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearForward-duration-2",
+    "control_action": "ApplyPressureSetGearForward",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Gearbox controller applies pressure to set gear forward for too long, causing gear damage or unintended prolonged forward movement.",
+    "hazards": [
+      "H7",
+      "H1",
+      "H13",
+      "H11"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "Pressure to set gear forward is maintained longer than necessary, causing excessive acceleration, violation of safe distances, or vehicle movement beyond allowed areas or while passengers are not safely seated."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearNeutral-not_providing-1",
+    "control_action": "ApplyPressureSetGearNeutral",
+    "type": "not_provided",
+    "description": "The Gearbox controller does not apply pressure to set gear neutral when the vehicle is required to stop or pause during parking maneuvers, leading to unintended vehicle movement.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the vehicle must be set to neutral to avoid unintended acceleration or movement; failure to apply neutral gear pressure causes the vehicle to move unexpectedly, violating minimum safe distance and parking boundaries."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearNeutral-providing-1",
+    "control_action": "ApplyPressureSetGearNeutral",
+    "type": "provided",
+    "description": "The Gearbox controller applies pressure to set gear neutral while the vehicle is supposed to be in forward or reverse gear to complete a parking maneuver, causing loss of control over vehicle movement.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During active parking maneuvers, if the gearbox is set to neutral prematurely, the vehicle may roll or fail to execute required movements, resulting in improper parking or unexpected acceleration/deceleration."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearNeutral-timing-1",
+    "control_action": "ApplyPressureSetGearNeutral",
+    "type": "too_early_too_late",
+    "description": "The Gearbox controller applies pressure to set gear neutral too early or too late in the parking sequence, disrupting the parking process and causing unsafe vehicle behavior.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If neutral gear is engaged before the vehicle has fully stopped or after the vehicle has started moving again, it may cause loss of control, abrupt stops, or unintended vehicle movement during parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearNeutral-duration-1",
+    "control_action": "ApplyPressureSetGearNeutral",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Gearbox controller applies pressure to set gear neutral for too short or too long a duration, causing incomplete gear engagement or delayed vehicle response.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H10"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If neutral gear pressure is applied too briefly, the gear may not fully engage, leading to unexpected vehicle movement; if applied too long, it may delay subsequent gear changes needed for parking maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-not_providing-1",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "not_provided",
+    "description": "The Gearbox controller does not apply pressure to set gear reverse when the parking maneuver requires reversing, causing the vehicle to fail to move backward as intended.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H9",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During an automated parking maneuver, the system requests gear reverse to back into a parking space, but the Gearbox controller fails to apply the necessary pressure, preventing the vehicle from reversing."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-providing-1",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "provided",
+    "description": "The Gearbox controller applies pressure to set gear reverse when the vehicle is not supposed to move backward, causing unintended reverse movement.",
+    "hazards": [
+      "H1",
+      "H9",
+      "H12",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The Gearbox controller sets gear reverse outside of the parking maneuver or without user request, potentially causing the vehicle to move backward unexpectedly and violate safe distances or stop in unsafe locations."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-timing-1",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "too_early_too_late",
+    "description": "The Gearbox controller applies pressure to set gear reverse too early before the vehicle is properly aligned or before other control actions are completed, leading to unsafe vehicle movement.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, gear reverse is engaged prematurely, causing the vehicle to reverse into obstacles or incorrect parking spaces due to improper sequencing with steering or braking controls."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-timing-2",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "too_early_too_late",
+    "description": "The Gearbox controller applies pressure to set gear reverse too late after the parking maneuver requires reversing, causing delays that may lead to incorrect parking or system timeouts.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H8",
+      "H20"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The system requests gear reverse, but the Gearbox controller delays applying pressure, resulting in prolonged parking time or failure to complete the parking maneuver within allowed moves."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-duration-1",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Gearbox controller applies pressure to set gear reverse for too short a duration, causing the gear not to engage fully and the vehicle to fail to reverse as commanded.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H9",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During reversing, the pressure is released prematurely, causing the vehicle to stall or fail to move backward, potentially leading to incomplete parking or unexpected stops."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-ApplyPressureSetGearReverse-duration-2",
+    "control_action": "ApplyPressureSetGearReverse",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Gearbox controller applies pressure to set gear reverse for too long, causing the vehicle to continue reversing beyond the intended distance or time.",
+    "hazards": [
+      "H1",
+      "H5",
+      "H6",
+      "H12",
+      "H14",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gear remains engaged in reverse longer than necessary, causing the vehicle to reverse into obstacles, park outside the designated space, or block emergency services."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Clutch-not_providing-1",
+    "control_action": "Clutch",
+    "type": "not_provided",
+    "description": "Clutch control action is not provided when required to disengage the engine from the gearbox during gear shifting, causing gear grinding or inability to change gears.",
+    "hazards": [
+      "H7",
+      "H5",
+      "H6",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During the parking maneuver, the gearbox controller fails to send the clutch disengage command before shifting gears, leading to abrupt vehicle behavior or inability to park properly."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Clutch-providing-1",
+    "control_action": "Clutch",
+    "type": "provided",
+    "description": "Clutch is engaged (disengaged from engine) when it should not be, causing unintended loss of drive torque and possible vehicle stall or sudden deceleration.",
+    "hazards": [
+      "H7",
+      "H1",
+      "H5",
+      "H6"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The gearbox controller activates the clutch during steady vehicle movement or acceleration phases, causing unexpected deceleration or loss of control during parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Clutch-timing-1",
+    "control_action": "Clutch",
+    "type": "too_early_too_late",
+    "description": "Clutch control action is provided too early or too late relative to gear shift commands, causing gear damage or abrupt vehicle jerks.",
+    "hazards": [
+      "H7",
+      "H5",
+      "H6",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The clutch is engaged after the gear shift command has already started or disengaged too late, resulting in harsh gear transitions during parking maneuvers."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Clutch-duration-1",
+    "control_action": "Clutch",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "Clutch is engaged for too short or too long a duration, causing incomplete gear shifts or excessive wear and vehicle instability.",
+    "hazards": [
+      "H7",
+      "H5",
+      "H6",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "The clutch remains engaged longer than necessary, causing delayed vehicle response, or disengages too quickly, causing gear clash during parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Unclutch-not_providing-1",
+    "control_action": "Unclutch",
+    "type": "not_provided",
+    "description": "The Gearbox controller does not send the 'Unclutch' command when required to engage gear changes during parking maneuvers, causing the vehicle to stall or fail to move as intended.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": {
+            "process_model_variables": [
+              {
+                "name": "Context",
+                "state": "During parking maneuvers, if the 'Unclutch' action is not provided when shifting gears, the vehicle may not accelerate or decelerate smoothly, leading to improper parking, excessive acceleration/deceleration, or failure to stop in emergency situations."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Unclutch-providing-1",
+    "control_action": "Unclutch",
+    "type": "provided",
+    "description": "The Gearbox controller sends the 'Unclutch' command inappropriately while the vehicle is stationary or during critical control phases, causing unintended gear engagement or loss of torque control.",
+    "hazards": [
+      "H7",
+      "H9",
+      "H11",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If 'Unclutch' is applied when the vehicle is not supposed to move or while passengers are not safely seated, it can cause sudden vehicle movement, involuntary activation of the system, or failure to stop during emergencies."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Unclutch-timing-1",
+    "control_action": "Unclutch",
+    "type": "too_early_too_late",
+    "description": "The Gearbox controller provides the 'Unclutch' command too early or too late relative to gear changes, causing jerky vehicle movements or delayed responses during parking.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H14"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If 'Unclutch' is applied before the gear is properly selected or after the vehicle has started moving, it can cause excessive acceleration or deceleration, improper parking alignment, or violation of safe distances to objects."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-GearboxController-Unclutch-duration-1",
+    "control_action": "Unclutch",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Gearbox controller holds the 'Unclutch' command applied for too long or stops it too soon, leading to incomplete gear engagement or unintended vehicle movement.",
+    "hazards": [
+      "H5",
+      "H6",
+      "H7",
+      "H19"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "If 'Unclutch' is maintained longer than necessary, the vehicle may lose torque control causing sudden acceleration or deceleration; if stopped too soon, gear engagement may fail, causing the vehicle not to move or stall during parking."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_but_useless",
+    "controller": "Gearbox controller"
+  },
+  {
+    "id": "UCA-SounderController-ModulatedVoltage-not_providing-1",
+    "control_action": "ModulatedVoltage",
+    "type": "not_provided",
+    "description": "The Sounder controller does not provide modulated voltage to the parking process when an audible alert is needed to warn about proximity to obstacles or system states.",
+    "hazards": [
+      "H1",
+      "H14",
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking maneuvers when the vehicle approaches minimum safe distance to objects or when the system needs to communicate warnings to the driver or environment, but the sounder remains silent."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Sounder controller"
+  },
+  {
+    "id": "UCA-SounderController-ModulatedVoltage-providing-1",
+    "control_action": "ModulatedVoltage",
+    "type": "provided",
+    "description": "The Sounder controller provides modulated voltage causing the sounder to emit alerts when no hazard or warning condition exists, leading to false alarms.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H4"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "When the parking process is inactive or the vehicle is stationary and no obstacles or system warnings are present, but the sounder emits alerts confusing the driver or environment."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Sounder controller"
+  },
+  {
+    "id": "UCA-SounderController-ModulatedVoltage-timing-1",
+    "control_action": "ModulatedVoltage",
+    "type": "too_early_too_late",
+    "description": "The Sounder controller provides modulated voltage too early or too late relative to the actual hazard or system event, causing mistimed alerts.",
+    "hazards": [
+      "H1",
+      "H10",
+      "H9"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the sounder activates before the vehicle is near an obstacle or after the vehicle has already violated minimum distance, reducing the effectiveness of warnings."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Sounder controller"
+  },
+  {
+    "id": "UCA-SounderController-ModulatedVoltage-duration-1",
+    "control_action": "ModulatedVoltage",
+    "type": "stopped_too_soon_applied_too_long",
+    "description": "The Sounder controller applies modulated voltage for too short or too long a duration, resulting in incomplete or excessive alert signaling.",
+    "hazards": [
+      "H9",
+      "H10",
+      "H4",
+      "H1"
+    ],
+    "context": {
+      "process_model_variables": [
+        {
+          "name": "Context",
+          "state": "During parking, the sounder stops alerting prematurely before the hazard is cleared or continues sounding excessively after the hazard is resolved, causing confusion or alarm fatigue."
+        }
+      ]
+    },
+    "severity": "Medium",
+    "rating": "correct_and_useful",
+    "controller": "Sounder controller"
+  }
+]

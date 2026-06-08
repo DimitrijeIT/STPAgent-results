@@ -1,0 +1,213 @@
+[
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L8"
+    ],
+    "description": "Vehicle violates minimum distance to objects",
+    "id": "H1"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L6",
+      "L7",
+      "L8"
+    ],
+    "description": "System activation outside ODD",
+    "id": "H2"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "description": "Unable to identify parking space",
+    "id": "H3"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L3",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "description": "Wrong space identified as parking space",
+    "id": "H4"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L6",
+      "L7"
+    ],
+    "description": "Vehicle not parked properly within desired parking space",
+    "id": "H5"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L6",
+      "L7"
+    ],
+    "description": "Vehicle parked in the wrong parking space",
+    "id": "H6"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L7"
+    ],
+    "description": "Too severe acceleration/deceleration",
+    "id": "H7"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L6",
+      "L7"
+    ],
+    "description": "Too long parking time",
+    "id": "H8"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L7",
+      "L8"
+    ],
+    "description": "Involuntary activation",
+    "id": "H9"
+  },
+  {
+    "associatedLosses": [
+      "L3",
+      "L4",
+      "L7",
+      "L6",
+      "L8"
+    ],
+    "description": "Incorrect system state communicated to driver or environment",
+    "id": "H10"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L5"
+    ],
+    "description": "Vehicle operates while serving passengers who are not safely seated.",
+    "id": "H11"
+  },
+  {
+    "associatedLosses": [
+      "L2",
+      "L3",
+      "L4",
+      "L7"
+    ],
+    "description": "Vehicle stops in location where passenger can't leave the vehicle.",
+    "id": "H12"
+  },
+  {
+    "associatedLosses": [
+      "L2",
+      "L1",
+      "L3",
+      "L4",
+      "L6",
+      "L7"
+    ],
+    "description": "Vehicle leaves defined driving area.",
+    "id": "H13"
+  },
+  {
+    "associatedLosses": [
+      "L3",
+      "L2",
+      "L4",
+      "L7"
+    ],
+    "description": "Vehicle does not maintain safe distance from objects",
+    "id": "H14"
+  },
+  {
+    "associatedLosses": [
+      "L2",
+      "L1",
+      "L4",
+      "L3",
+      "L7"
+    ],
+    "description": "Vehicle exceeds 30km/h velocity",
+    "id": "H15"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L7"
+    ],
+    "description": "Vehicle impedes operation of emeregency services",
+    "id": "H16"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L7"
+    ],
+    "description": "Vehicle exceeds 20km/h in a turn",
+    "id": "H17"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "description": "Vehicle loses connection to internet/operatior",
+    "id": "H18"
+  },
+  {
+    "associatedLosses": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L7",
+      "L8"
+    ],
+    "description": "Vehicle does not stop when an emeregency stop is necessary",
+    "id": "H19"
+  },
+  {
+    "associatedLosses": [
+      "L4",
+      "L6",
+      "L5",
+      "L7"
+    ],
+    "description": "Autonomous driving system unavailable",
+    "id": "H20"
+  }
+]

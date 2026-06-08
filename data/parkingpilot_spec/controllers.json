@@ -1,0 +1,92 @@
+[
+  {
+    "control_actions": [],
+    "id": "1",
+    "name": "Human",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "Human"
+  },
+  {
+    "control_actions": [],
+    "id": "2",
+    "name": "Display",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "3",
+    "name": "ParkPiIot Controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "4",
+    "name": "Brake controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "5",
+    "name": "Chasis controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "6",
+    "name": "Servo Steering contoller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "7",
+    "name": "Engine controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "8",
+    "name": "Gearbox controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  },
+  {
+    "control_actions": [],
+    "id": "9",
+    "name": "Sounder controller",
+    "process_model": {
+      "variables": []
+    },
+    "responsibilities": [],
+    "type": "controller"
+  }
+]

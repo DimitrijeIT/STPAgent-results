@@ -1,0 +1,150 @@
+{
+  "connections": [
+    {
+      "description": "Activate ParkPilot screen\nCancel\nSelect parking space",
+      "from": "Human",
+      "to": "Display",
+      "type": "Control"
+    },
+    {
+      "description": "Emergency cancel by Brake",
+      "from": "Human",
+      "to": "ParkPiIot Controller",
+      "type": "Control"
+    },
+    {
+      "description": "Press brake pedal",
+      "from": "Human",
+      "to": "Brake controller",
+      "type": "Control"
+    },
+    {
+      "description": "Set wanted brake pressure",
+      "from": "Brake controller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Brake status\nBraking force\nVehicle speed",
+      "from": "Brake controller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Activate hazard light\nDeactivate hazard light",
+      "from": "Chasis controller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Hazard light Status",
+      "from": "Chasis controller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Rotate the steering column left \nRotate the steering column right",
+      "from": "Servo Steering contoller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Current steering angle",
+      "from": "Servo Steering contoller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Decrease torque\nIncrease torque",
+      "from": "Engine controller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Engine status\nVehicle acceleration",
+      "from": "Engine controller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Apply pressure to set gear forward \nApply pressure to set gear neutral \nApply pressure to set gear reverse \nClutch\nUnclutch",
+      "from": "Gearbox controller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Current gear \nGearbox status",
+      "from": "Gearbox controller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Modulated voltage",
+      "from": "Sounder controller",
+      "to": "Parking process",
+      "type": "Control"
+    },
+    {
+      "description": "Sounder status",
+      "from": "Sounder controller",
+      "to": "ParkPiIot Controller",
+      "type": "Feedback"
+    },
+    {
+      "description": "Activate brake \nDeactivate brake",
+      "from": "ParkPiIot Controller",
+      "to": "Brake controller",
+      "type": "Control"
+    },
+    {
+      "description": "Activate hazard light \nDeactivate hazard light",
+      "from": "ParkPiIot Controller",
+      "to": "Chasis controller",
+      "type": "Control"
+    },
+    {
+      "description": "Set acceleration 0 \nSet acceleration negative \nSet acceleration positive",
+      "from": "ParkPiIot Controller",
+      "to": "Engine controller",
+      "type": "Control"
+    },
+    {
+      "description": "Set gear Forward\nSet gear Neutral\nSet gear Reverse",
+      "from": "ParkPiIot Controller",
+      "to": "Gearbox controller",
+      "type": "Control"
+    },
+    {
+      "description": "Set steering angle",
+      "from": "ParkPiIot Controller",
+      "to": "Servo Steering contoller",
+      "type": "Control"
+    },
+    {
+      "description": "Sounder OFF \nSounder ON \nSounder frequency",
+      "from": "ParkPiIot Controller",
+      "to": "Sounder controller",
+      "type": "Control"
+    },
+    {
+      "description": "Available spaces info \nParkPilot status",
+      "from": "ParkPiIot Controller",
+      "to": "Display",
+      "type": "Feedback"
+    }
+  ],
+  "controlled_processes": [
+    "Parking process"
+  ],
+  "controllers": [
+    "Human",
+    "Display",
+    "ParkPiIot Controller",
+    "Brake controller",
+    "Chasis controller",
+    "Servo Steering contoller",
+    "Engine controller",
+    "Gearbox controller",
+    "Sounder controller"
+  ]
+}
