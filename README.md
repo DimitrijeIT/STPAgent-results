@@ -26,8 +26,46 @@ ISO 26262-certified safety engineers.**
 │       ├── ucas.json                    # 231 UCAs (flat list, all fields)
 │       └── ucas.csv                     # Same data in CSV form
 ├── evaluation/
-│   ├── STPAgent Evaluation.xlsx        # Aggregate counts per evaluator (A--F)
+│   └── STPAgent Evaluation.xlsx         # Per-UCA ratings by six evaluators (sheets A-F)
+├── prompts/
+│   └── prompts.json                     # Writer/Reviewer system + user prompt templates
+└── analysis/
+    ├── recompute_statistics.py          # Recomputes all agreement statistics in the paper
+    └── evaluator_sensitivity.py         # Evaluator-subset robustness / sensitivity analysis
+```
 
+## Reproducing the reported statistics
+
+```bash
+pip install openpyxl
+python analysis/recompute_statistics.py     # writes recompute_statistics_report.md
+python analysis/evaluator_sensitivity.py    # writes evaluator_sensitivity_report.md
+```
+
+Each script prints its results to the console **and** writes a Markdown report
+next to itself (override the path with `--out`, suppress the console echo with
+`--quiet`). Both depend only on `openpyxl` and the Python standard library; the
+chi-square, Fisher's-exact, Fleiss/Gwet kappa and Cochran's Q math is
+implemented inline so there is nothing to trust but the readable code.
+
+`recompute_statistics.py` recomputes, from the raw per-evaluator ratings: the
+per-evaluator classification percentages, the mean/median rates and the 95%
+confidence interval for total correctness, raw inter-rater agreement, Gwet's AC1
+(binary and three-category), Fleiss' kappa (reported secondarily in the paper
+due to the prevalence paradox), both Cochran's Q tests, the consensus error
+counts, and the architecture ablation (chi-square uncorrected and
+Yates-corrected, Fisher's exact, and Cohen's h).
+
+`evaluator_sensitivity.py` answers three robustness questions: (1) a baseline
+sanity check against `recompute_statistics.py`; (2) a provenance search over all
+evaluator subsets of size 3–6, showing that no subset reproduces the
+(now-corrected) agreement values from the first submission; and (3) leave-one-out
+and leave-best-and-worst-out sensitivity, showing the safety-critical findings do
+not hinge on any single evaluator.
+
+Notes on denominators: evaluator B left 2 UCAs unrated and evaluator C left
+16; per-evaluator percentages use each evaluator's rated count, and agreement
+statistics use the 213 UCAs rated by all six evaluators.
 
 ## Citation
 
@@ -37,6 +75,12 @@ ISO 26262-certified safety engineers.**
   author  = {Stojanović, Dimitrije and Pavković, Bogdan and Četić, Nenad},
   journal = {Journal of Systems Architecture},
   year    = {2026},
-  note    = {Companion artifacts: https://github.com/dimitrije-stojanovic/stpagent}
+  note    = {Companion artifacts: https://github.com/DimitrijeIT/STPAgent-results}
 }
 ```
+
+## Licence
+
+- **Code** (`analysis/`, `prompts/`) — Apache License 2.0 (see `LICENSE`).
+- **Data** (`data/`, `evaluation/`) — Creative Commons Attribution 4.0
+  International (see `LICENSE-data`).
